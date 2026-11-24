@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Selected graphic design work by Diana G. Munisi — branding, posters, packaging, invitations and visual communication." />
+  <meta name="theme-color" content="#03203D" />
+  <title>Diana G. Munisi | Graphic Design Portfolio</title>
+  <style>
+    :root {
+      --navy: #03203D;
+      --navy-2: #0A2D4D;
+      --gold: #C5A15A;
+      --gold-light: #E0C98F;
+      --ink: #172536;
+      --muted: #687586;
+      --paper: #F7F6F2;
+      --white: #FFFFFF;
+      --line: rgba(3, 32, 61, .13);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+      --shadow: 0 18px 50px rgba(3, 32, 61, .10);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .container { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+    .eyebrow {
+      color: var(--gold);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .serif { font-family: var(--serif); font-weight: 400; }
+    .gold-rule { width: 54px; height: 2px; background: var(--gold); margin: 20px 0; }
+
+    /* Navigation */
+    .site-header {
+      position: absolute;
+      inset: 0 0 auto;
+      z-index: 10;
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,.13);
+    }
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      font-family: var(--serif);
+      color: var(--gold-light);
+      font-size: 1.8rem;
+      letter-spacing: .04em;
+      position: absolute;
+      inset: 0 0 auto;
+    }
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a {
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.82);
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+    .menu-toggle {
+      display: none;
+      color: white;
+      border: 1px solid rgba(255,255,255,.35);
+      background: transparent;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 690px;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 82% 38%, rgba(197,161,90,.15), transparent 25%),
+        linear-gradient(120deg, #02182E 0%, var(--navy) 58%, #0B3455 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 470px;
+      height: 470px;
+      right: -145px;
+      bottom: -245px;
+      border: 1px solid rgba(197,161,90,.35);
+      border-radius: 50%;
+      box-shadow: 0 0 0 45px rgba(197,161,90,.035), 0 0 0 90px rgba(197,161,90,.025);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 760px; padding: 145px 0 105px; }
+    .hero h1 {
+      margin: 18px 0 18px;
+      font-family: var(--serif);
+      font-size: clamp(3.3rem, 8vw, 6.5rem);
+      line-height: .99;
+      font-weight: 400;
+      letter-spacing: -.035em;
+    }
+    .hero h1 span { color: var(--gold-light); }
+    .hero-copy { max-width: 570px; color: rgba(255,255,255,.75); font-size: 1.02rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 34px; }
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: var(--navy);
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: .2s ease;
+      cursor: pointer;
+    }
+    .button:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-2px); }
+    .button-outline { color: white; background: transparent; border-color: rgba(255,255,255,.45); }
+    .button-outline:hover { color: var(--navy); background: white; border-color: white; }
+
+    /* Shared sections */
+    section { scroll-margin-top: 28px; }
+    .section { padding: 100px 0; }
+    .section-heading { max-width: 650px; margin-bottom: 42px; }
+    .section-heading h2 {
+      margin: 10px 0 14px;
+      color: var(--navy);
+      font: 400 clamp(2.4rem, 5vw, 3.8rem)/1.05 var(--serif);
+      letter-spacing: -.025em;
+    }
+    .section-heading p { color: var(--muted); margin: 0; }
+
+    /* About */
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 80px; align-items: center; }
+    .about-copy h2 { margin: 10px 0 20px; color: var(--navy); font: 400 clamp(2.3rem, 4vw, 3.5rem)/1.1 var(--serif); }
+    .about-copy p { color: var(--muted); }
+    .about-note {
+      padding: 34px;
+      background: var(--navy);
+      color: white;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+    .about-note::before { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(197,161,90,.45); pointer-events: none; }
+    .about-note blockquote {
+      position: relative;
+      margin: 0;
+      padding: 18px 10px;
+      font: 400 1.65rem/1.35 var(--serif);
+      color: var(--gold-light);
+    }
+    .about-note p { position: relative; margin: 8px 10px 15px; color: rgba(255,255,255,.65); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
+
+    /* Portfolio */
+    .portfolio-section { background: #EFEEE9; }
+    .filters { display: flex; flex-wrap: wrap; gap: 9px; margin: 0 0 30px; }
+    .filter-btn {
+      border: 1px solid rgba(3,32,61,.2);
+      padding: 9px 14px;
+      background: transparent;
+      color: var(--navy);
+      font-size: .72rem;
+      letter-spacing: .06em;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+    .filter-btn:hover, .filter-btn.active { background: var(--navy); color: white; border-color: var(--navy); }
+    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .project-card {
+      min-width: 0;
+      background: white;
+      box-shadow: 0 7px 24px rgba(3,32,61,.055);
+      transition: transform .25s ease, box-shadow .25s ease;
+      cursor: pointer;
+      border: 0;
+      padding: 0;
+      text-align: left;
+      color: inherit;
+    }
+    .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .project-art {
+      aspect-ratio: 4 / 4.25;
+      overflow: hidden;
+      position: relative;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      background: var(--art-bg, #D8DDE1);
+      color: var(--art-fg, #03203D);
+      text-align: center;
+    }
+    .project-art::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid currentColor;
+      opacity: .22;
+      pointer-events: none;
+    }
+    .art-inner { position: relative; z-index: 1; max-width: 100%; }
+    .art-kicker { display: block; font-size: .55rem; letter-spacing: .22em; font-weight: 700; text-transform: uppercase; margin-bottom: 13px; }
+    .art-title { display: block; font: 400 clamp(1.7rem, 3vw, 2.55rem)/.98 var(--serif); letter-spacing: -.03em; }
+    .art-subtitle { display: block; margin-top: 14px; font-size: .58rem; letter-spacing: .13em; text-transform: uppercase; }
+    .project-meta { padding: 17px 18px 19px; }
+    .project-category { color: #9A7A3F; font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
+    .project-title { display: block; color: var(--navy); margin-top: 5px; font: 400 1.25rem var(--serif); }
+    .project-hint { color: #8A929B; font-size: .72rem; margin-top: 5px; }
+
+    /* Contact */
+    .contact-section { background: var(--navy); color: white; text-align: center; }
+    .contact-section .section-heading { margin: 0 auto 30px; }
+    .contact-section .section-heading h2 { color: white; }
+    .contact-section .section-heading p { color: rgba(255,255,255,.68); }
+    .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+    .contact-links a { border: 1px solid rgba(197,161,90,.7); padding: 12px 18px; color: var(--gold-light); font-size: .75rem; letter-spacing: .08em; transition: .2s ease; }
+    .contact-links a:hover { background: var(--gold); color: var(--navy); }
+    .contact-small { margin-top: 26px; color: rgba(255,255,255,.45); font-size: .75rem; }
+
+    footer { padding: 22px 0; background: #02182E; color: rgba(255,255,255,.55); font-size: .72rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    .footer-inner span:first-child { color: var(--gold-light); letter-spacing: .08em; }
+
+    /* Project detail dialog */
+    dialog {
+      width: min(560px, calc(100% - 28px));
+      border: 1px solid rgba(197,161,90,.6);
+      padding: 0;
+      color: var(--ink);
+      box-shadow: 0 25px 90px rgba(0,0,0,.3);
+    }
+    dialog::backdrop { background: rgba(1,15,28,.78); backdrop-filter: blur(4px); }
+    .dialog-art { min-height: 270px; display: grid; place-items: center; padding: 30px; text-align: center; }
+    .dialog-body { padding: 25px 28px 28px; }
+    .dialog-body h3 { margin: 5px 0 10px; color: var(--navy); font: 400 2rem var(--serif); }
+    .dialog-body p { color: var(--muted); margin: 0 0 18px; }
+    .dialog-close { float: right; border: 1px solid var(--line); background: white; padding: 7px 12px; cursor: pointer; color: var(--navy); }
+
+    @media (max-width: 800px) {
+      .about-grid { grid-template-columns: 1fr; gap: 35px; }
+      .project-grid { grid-template-columns: repeat(2, 1fr); }
+      .section { padding: 78px 0; }
+      .hero { min-height: 620px; }
+    }
+    @media (max-width: 560px) {
+      .container { width: min(100% - 34px, 1120px); }
+      .nav { min-height: 72px; }
+      .menu-toggle { display: inline-block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        padding: 18px 24px 22px;
+        background: #02182E;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 17px;
+      }
+      .nav-links.open { display: flex; }
+      .hero { min-height: 590px; }
+      .hero-content { padding: 125px 0 80px; }
+      .hero h1 { font-size: clamp(3rem, 15vw, 4.6rem); }
+      .project-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .project-art { aspect-ratio: 4 / 4.8; padding: 16px; }
+      .project-art::after { inset: 8px; }
+      .art-title { font-size: clamp(1.35rem, 6vw, 2rem); }
+      .project-meta { padding: 13px 12px 15px; }
+      .project-title { font-size: 1.05rem; }
+      .project-hint { font-size: .65rem; }
+      .section-heading { margin-bottom: 30px; }
+      .about-note { padding: 25px; }
+      .about-note blockquote { font-size: 1.35rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+    /* PROFILE PHOTO */
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 3px solid #C5A15A;
+    display: block;
+}
+.project-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.project-art {
+    overflow: hidden;
+}
+  </style>
+</head>
+<body>
+  <!--
+    QUICK CUSTOMISATION:
+    1. Replace "Diana G. Munisi" and the short introduction if you want different wording.
+    2. Update the email and WhatsApp links in the Contact section.
+    3. Replace the sample project cards with your real work. Search for "PROJECT CARD".
+    4. This is a single-file website: CSS and JavaScript are already included.
+  -->
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#home" class="logo">
+    <img src="images/dee.jpg"
+         alt="Diana G. Munisi"
+         class="profile-photo">
+</a>
+      <a class="brand" href="#home" aria-label="Diana Munisi home">Diana GM.</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">Menu ☰</button>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#work">Selected Work</a>
+        <a href="#contact">Contacts</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Graphic Design Portfolio</div>
+          <h1 class="serif">I Make Ideas<br><span>Stand Out.</span></h1>
+          <p class="hero-copy">I'm Diana Geofrey Munisi, a graphic designer creating thoughtful visual experiences through branding, print design and digital communication.</p>
+          <div class="hero-actions">
+            <a class="button" href="#work">Explore my work</a>
+            <a class="button button-outline" href="#contact">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <div class="eyebrow">A little about me</div>
+          <h2>Every good design. <span style="color:var(--gold)">Starts with a good idea.</span></h2>
+          <div class="gold-rule"></div>
+          <p>"I'm a graphic designer who enjoys bringing ideas to life through colour, layout and thoughtful details. Whether it's a poster that needs to catch someone's eye, a brand that needs a clear identity, or an invitation for a meaningful occasion, I love finding the right visual way to tell the story.</p>
+          <p>My approach is guided by clarity, creativity and attention to detail — with each design shaped around its message and audience.</p>
+        </div>
+        <aside class="about-note">
+          <blockquote>“Good design is not only seen. It is understood, remembered and felt.”</blockquote>
+          <p>Creative approach</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section portfolio-section" id="work">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">MY WORKS</div>
+          <h2>Selected works</h2>
+          <p>"From bold promotional designs to the finer details of branding and packaging, each piece has a purpose. Explore the categories below and see how I bring different ideas to life."</p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button class="filter-btn active" data-filter="all">All work</button>
+          <button class="filter-btn" data-filter="posters">Posters & Flyers</button>
+          <button class="filter-btn" data-filter="branding">Branding</button>
+          <button class="filter-btn" data-filter="packaging">Packaging</button>
+          <button class="filter-btn" data-filter="invitations">Invitations</button>
+          <button class="filter-btn" data-filter="digital">Digital & Print</button>
+        </div>
+
+        <div class="project-grid" id="projectGrid">
+          <!-- PROJECT CARD: Replace each sample card with your own artwork and description. -->
+          <button class="project-card"
+        data-category="posters"
+        data-title="Campaign Poster"
+        data-description="A promotional poster designed to communicate a clear message and capture attention.">
+
+    <div class="project-art">
+        <img src="images/dee.jpg"
+             alt="Campaign Poster Design"
+             class="project-image">
+    </div>
+
+    <div class="project-meta">
+        <span class="project-category">Posters & Flyers</span>
+        <span class="project-title">Campaign Poster</span>
+        <span class="project-hint">Click to view details ↗</span>
+    </div>
+
+</button>
+          <button class="project-card" data-category="branding" data-title="Brand Identity" data-description="A visual identity concept showing how a logo, typography and colour palette can work together. Replace this sample with a real branding project." data-art="brand">
+            <div class="project-art" style="--art-bg:#0A2D35;--art-fg:#E4C98C">
+              <div class="art-inner"><span class="art-kicker">A considered identity</span><span class="art-title">NŌR<br>STUDIO</span><span class="art-subtitle">Identity concept</span></div>
+            </div>
+            <div class="project-meta"><span class="project-category">Branding & Logos</span><span class="project-title">Brand Identity</span><span class="project-hint">Click to view details ↗</span></div>
+          </button>
+
+          <button class="project-card" data-category="packaging" data-title="Product Label" data-description="Product label and packaging design concept. Replace this sample with your actual label artwork and explain the product and design choices." data-art="label">
+            <div class="project-art" style="--art-bg:#E8DCC8;--art-fg:#4C3827">
+              <div class="art-inner"><span class="art-kicker">Small-batch collection</span><span class="art-title">PURE<br>BOTANICS</span><span class="art-subtitle">Product label design</span></div>
+            </div>
+            <div class="project-meta"><span class="project-category">Labels & Packaging</span><span class="project-title">Product Label</span><span class="project-hint">Click to view details ↗</span></div>
+          </button>
+
+          <button class="project-card" data-category="invitations" data-title="Event Invitation" data-description="An elegant invitation design for a special event. Replace this sample with your actual invitation or greeting card design." data-art="invite">
+            <div class="project-art" style="--art-bg:#E9E1D8;--art-fg:#775B43">
+              <div class="art-inner"><span class="art-kicker">Together with our families</span><span class="art-title">You are<br>invited.</span><span class="art-subtitle">An invitation · A special day</span></div>
+            </div>
+            <div class="project-meta"><span class="project-category">Invitations & Cards</span><span class="project-title">Event Invitation</span><span class="project-hint">Click to view details ↗</span></div>
+          </button>
+
+          <button class="project-card" data-category="digital" data-title="Social Media Design" data-description="A digital promotional graphic designed for social media. Replace this sample with your own post, campaign or content series." data-art="social">
+            <div class="project-art" style="--art-bg:#D5E0E5;--art-fg:#092B49">
+              <div class="art-inner"><span class="art-kicker">Your next chapter</span><span class="art-title">GROW<br>WITH US.</span><span class="art-subtitle">Social media creative</span></div>
+            </div>
+            <div class="project-meta"><span class="project-category">Social Media</span><span class="project-title">Social Media Design</span><span class="project-hint">Click to view details ↗</span></div>
+          </button>
+
+          <button class="project-card" data-category="digital" data-title="Business Stationery" data-description="Business card and stationery design concept. Replace this sample with a real client or personal branding project." data-art="stationery">
+            <div class="project-art" style="--art-bg:#F0EDE5;--art-fg:#03203D">
+              <div class="art-inner"><span class="art-kicker">A lasting first impression</span><span class="art-title">YOUR<br>IDENTITY.</span><span class="art-subtitle">Business stationery</span></div>
+            </div>
+            <div class="project-meta"><span class="project-category">Business Stationery</span><span class="project-title">Business Stationery</span><span class="project-hint">Click to view details ↗</span></div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Start a conversation</div>
+          <h2>Have a project in mind?</h2>
+          <p>I'd love to hear about your project, creative needs or an opportunity to work together.</p>
+        </div>
+        <div class="contact-links">
+          <!-- IMPORTANT: Replace the example email and phone number below with your real details. -->
+          <a href="mailto:dianamunisi308@gmail.com">Email me</a>
+          <a href="https://wa.me/255655888734" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="contact-small">Based in Tanzania · Available for creative opportunities</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>DIANA G. MUNISI · DESIGN PORTFOLIO</span>
+      <span>© <span id="year"></span> All rights reserved.</span>
+    </div>
+  </footer>
+
+  <dialog id="projectDialog" aria-labelledby="dialogTitle">
+    <div class="dialog-art" id="dialogArt"></div>
+    <div class="dialog-body">
+      <button class="dialog-close" id="dialogClose" aria-label="Close project details">Close ✕</button>
+      <div class="eyebrow" id="dialogCategory">Project</div>
+      <h3 id="dialogTitle">Project title</h3>
+      <p id="dialogDescription">Project description.</p>
+    </div>
+  </dialog>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? 'Close ✕' : 'Menu ☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = 'Menu ☰';
+      });
+    });
+
+    // Portfolio category filters
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        projectCards.forEach(card => {
+          card.hidden = filter !== 'all' && card.dataset.category !== filter;
+        });
+      });
+    });
+
+    // Project detail pop-up
+    const dialog = document.getElementById('projectDialog');
+    const dialogArt = document.getElementById('dialogArt');
+    const dialogTitle = document.getElementById('dialogTitle');
+    const dialogDescription = document.getElementById('dialogDescription');
+    const dialogCategory = document.getElementById('dialogCategory');
+
+    projectCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const art = card.querySelector('.project-art').cloneNode(true);
+        art.style.width = '100%';
+        art.style.minHeight = '270px';
+        art.style.aspectRatio = 'auto';
+        dialogArt.replaceChildren(art);
+        dialogTitle.textContent = card.dataset.title;
+        dialogDescription.textContent = card.dataset.description;
+        dialogCategory.textContent = card.querySelector('.project-category').textContent;
+        dialog.showModal();
+      });
+    });
+    document.getElementById('dialogClose').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+      if (event.target === dialog) dialog.close();
+    });
+
+    // Automatically update the footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
